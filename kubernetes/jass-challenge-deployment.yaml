@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: jass-challenge
+  name: jass-challenge
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: jass-challenge
+  template:
+    metadata:
+      labels:
+        app: jass-challenge
+    spec:
+      containers:
+        - image: gcr.io/<project_id>/<image_name>
+          imagePullPolicy: IfNotPresent
+          name: jass-challenge
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+          resources: {}
