@@ -5,7 +5,7 @@ import * as messages from '../../../shared/messages/messages';
 import {MessageType} from '../../../shared/messages/messageType';
 import {SessionChoice} from '../../../shared/session/sessionChoice';
 
-const protocol = (process.env.NODE && ~process.env.NODE.indexOf('heroku')) ? 'wss' : 'ws';
+const protocol = (process.env.NODE_HOME && ~process.env.NODE_HOME.indexOf('heroku')) ? 'wss' : 'ws';
 const serverAddress = `${protocol}://${window.location.host}`;
 
 let webSocket;

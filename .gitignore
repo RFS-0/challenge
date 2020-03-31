@@ -6,3 +6,5 @@ bower_components
 npm-debug.log
 build/
 .DS_Store
+
+protocol-*.json
