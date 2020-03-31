@@ -47,9 +47,9 @@
     "mocha": "3.3.0",
     "nodemon": "1.11.0",
     "phantomjs-prebuilt": "2.1.14",
-    "socket.io-client": "2.0.1",
+    "socket.io-client": "^2.3.0",
     "watch": "1.0.2",
-    "watchify": "3.9.0"
+    "watchify": "^3.11.1"
   },
   "dependencies": {
     "babel-core": "6.24.1",
@@ -63,12 +63,12 @@
     "copyfiles": "1.2.0",
     "cross-env": "4.0.0",
     "docker-namesgenerator": "0.0.1",
-    "express": "4.15.2",
+    "express": "^4.17.1",
     "flux": "3.1.2",
     "font-awesome": "4.7.0",
     "glicko2": "0.8.4",
     "less": "2.7.2",
-    "lodash": "4.17.4",
+    "lodash": "^4.17.15",
     "mkdirp": "0.5.1",
     "npm-run-all": "4.0.2",
     "react": "15.6.1",
