@@ -4,7 +4,7 @@
   "private": true,
   "main": "build/server/app.js",
   "engines": {
-    "node": ">=6.2"
+    "node": ">=12.16"
   },
   "scripts": {
     "clean": "rimraf build && mkdirp build/server && mkdirp build/client && mkdirp build/bot",
@@ -29,7 +29,7 @@
     "test:watch": "run-p test:backend:watch test:frontend:watch",
     "prestart": "npm run build",
     "start": "node build/server/app.js",
-    "start:tournament": "cross-env TOURNAMENT_LOGGING=false TOURNAMENT_ROUNDS=100 TOURNAMENT_COUNTING=true npm start",
+    "start:tournament": "cross-env TOURNAMENT_LOGGING=true DEBUG=true TOURNAMENT_ROUNDS=100 TOURNAMENT_COUNTING=true npm start",
     "start:watch": "nodemon -e js,jsx,less --watch server --watch shared --watch client --exec \"npm run start\"",
     "bot:start": "npm run build:js:bot && node build/bot/Bot.js",
     "debug": "cross-env DEBUG=true npm run start:watch -- --debug --debug-brk=5858"
