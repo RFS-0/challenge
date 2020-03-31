@@ -13,15 +13,18 @@ const ClientCommunication = {
             return JSON.parse(jsonAsString);
         } catch (error) {
             Logger.error('Bad message from client: ' + jsonAsString);
+            return null;
         }
     },
 
     on(client, messageType, messageHandler) {
         function handleMessage(message) {
             let messageObject = ClientCommunication.fromJSON(message);
-
+            if (messageObject == null) {
+                return;
+            }
             if (messageObject.type === messageType.name) {
-                Logger.debug('<-- Received Message: ' + message);
+                Logger.debug('--> Received Message: ' + message);
 
                 const validationResult = validate(messageObject, messageType.constraints);
                 if (validationResult) {
@@ -43,7 +46,7 @@ const ClientCommunication = {
                 let messageObject = ClientCommunication.fromJSON(message);
 
                 if (messageObject.type === expectedMessageType.name) {
-                    Logger.debug('<-- Received Message: ' + message);
+                    Logger.debug('--> Received Message: ' + message);
 
                     const validationResult = validate(messageObject, expectedMessageType.constraints);
                     if (validationResult) {
@@ -84,7 +87,7 @@ const ClientCommunication = {
 
             function handleMessage(message) {
                 clearTimeout(requestTimeout);
-                Logger.debug('<-- Received Message: ' + message);
+                Logger.debug('--> Received Message: ' + message);
                 client.removeListener('message', handleMessage);
                 resolveCorrectMessageOrReject(client, expectedMessageType, message, resolve, reject);
             }
