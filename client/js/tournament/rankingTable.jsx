@@ -9,7 +9,7 @@ export default ({ranking = []}) => {
             <thead>
             <tr>
                 <th>Rank</th>
-                <th>Player</th>
+                <th>Team</th>
                 {hasRating && <th>Rating (Glicko)</th>}
                 <th>Connected Clients</th>
             </tr>

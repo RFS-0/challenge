@@ -15,7 +15,7 @@ function choosePlayerName(event) {
 export default (props) => {
     return (
         <div id="requestPlayerName" className={(props.setupState === GameSetupState.SET_PLAYER_NAME ? '' : 'hidden')}>
-            <input type="text" placeholder="Enter Player Name..." onKeyPress={choosePlayerName}/>
+            <input type="text" placeholder="Enter Player Name..." onKeyPress={choosePlayerName} autoFocus/>
         </div>
     );
 };
