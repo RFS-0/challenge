@@ -32,7 +32,9 @@
     "start:tournament": "cross-env TOURNAMENT_LOGGING=false TOURNAMENT_ROUNDS=100 TOURNAMENT_COUNTING=true npm start",
     "start:watch": "nodemon -e js,jsx,less --watch server --watch shared --watch client --exec \"npm run start\"",
     "bot:start": "npm run build:js:bot && node build/bot/Bot.js",
-    "debug": "cross-env DEBUG=true npm run start:watch -- --debug --debug-brk=5858"
+    "debug": "cross-env DEBUG=true npm run start:watch -- --debug --debug-brk=5858",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "babel-eslint": "7.2.3",
@@ -79,6 +81,8 @@
     "rimraf": "2.6.1",
     "sinon": "2.3.5",
     "validate.js": "0.11.1",
-    "ws": "2.3.1"
-  }
+    "ws": "2.3.1",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
